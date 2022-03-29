@@ -1,0 +1,65 @@
+
+import java.util.* ;
+
+
+class TellCall
+{
+	long phno ;
+	String sname ;
+	int n ;
+	Double amt ;
+	
+	TellCall( long x , String y , int z )
+	{
+		phno = x ;
+		sname = y ;
+		n = z ;
+	}
+	TellCall(){}
+	
+	void compute()
+	{
+		if( n <= 100 )
+			amt = 500 ;
+		else if ( n < 201 )
+			amt = 500 + (n - 100) ;
+		else if ( n < 301 )
+			amt = 500 + (n - 200)*1.20 + 100*1.0 ;
+		else if ( n > 300 )
+			amt = 500 + (n - 300)*1.50 + 100*1.20 + 100*1.0 ;
+	}
+	
+	void display()
+	{
+		System.out.println("\n\n");
+		System.out.println( "\t\t\t BHARAT SANCHAR NIGAM LIMITED " );
+		System.out.println("------------------------------------------------------------------------------------------");
+		System.out.println("Telephone Number : " + phno +  "\t\t" + "Name : " + sname ) ;
+		System.out.println("No. of calls made : " + n) ;
+		System.out.println("Total amount to pay : "+ amt ) ;
+		System.out.println("------------------------------------------------------------------------------------------");
+		System.out.println("\n\n");
+	}
+	
+}
+	
+	
+	
+	
+class BillCount()
+{
+	public static void main( String [] args)
+	{
+		Scanner sc = new Scanner(System.in) ;
+		int a ;
+		String b ;
+		long c ;
+		a = sc.nextInt() ;
+		b = sc.nextLine() ;
+		c = sc.nextLong() ;
+		TellCall obj = new TellCall(c,b,a) ;
+		obj.compute() ;
+		obj.display() ;
+	}
+}
+	
